@@ -1,11 +1,16 @@
 const express = require('express');
+const path = require('path');
 const port = 8000;
 const app = express();
 
-app.use('/', require('./routes'));
+app.use('/', require('./routes/index.js'))
 
 app.set('view engine', 'ejs');
-app.use('views', './views');
+
+app.set('views', './views');
+
+
+
 
 app.listen(port, function (err) {
     if (err) {
